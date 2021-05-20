@@ -108,3 +108,24 @@ insert into mladic (suknja,kuna,ekstrovertno,dukserica) values
 ('krem',150.00, 1, 'zuta');
 
 select * from mladic;
+
+insert into svekar (bojaociju) values
+('plave'),
+('smede'),
+('crne');
+
+select * from svekar;
+
+insert into punac (hlace) values
+('Mustang'),
+('Levis'),
+('Smog');
+
+select * from punac;
+
+insert into cura(novcica,gustoca,ogrlica) values
+(350.00, 24.00, 1),
+(250.00, 46.00, 1),
+(960.00, 94.00, 1);
+
+select * from cura;
