@@ -129,3 +129,17 @@ insert into cura(novcica,gustoca,ogrlica) values
 (960.00, 94.00, 1);
 
 select * from cura;
+
+#Prikažite dukserica iz tablice svekar, asocijalno iz tablice mladic te
+#hlace iz tablice muskarac uz uvjet da su vrijednosti kolone hlace iz
+#tablice zena počinju slovom a te da su vrijednosti kolone haljina iz
+#tablice sestra sadrže niz znakova ba. Podatke posložite po hlace iz
+#tablice muskarac silazno.
+
+select a.dukserica, f.asocijalno, e.hlace 
+from svekar a inner join sestra_svekar b on a.sifra=b.svekar
+inner join sestra c on c.sifra=b.sestra
+inner join zena d on d.sestra=c.sifra
+inner join muskarac e on e.zena=d.sifra 
+inner join mladic f on f.muskarac=e.sifra 
+where d.hlace like 'a%' and c.haljina like '%ba%';
